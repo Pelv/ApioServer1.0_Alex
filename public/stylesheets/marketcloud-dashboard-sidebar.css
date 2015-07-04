@@ -1,0 +1,132 @@
+/*Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino*/
+
+/********************************* LICENSE *******************************
+*									 *
+* This file is part of ApioOS.						 *
+*									 *
+* ApioOS is free software released under the GPLv2 license: you can	 *
+* redistribute it and/or modify it under the terms of the GNU General	 *
+* Public License version 2 as published by the Free Software Foundation. *
+*									 *
+* ApioOS is distributed in the hope that it will be useful, but		 *
+* WITHOUT ANY WARRANTY; without even the implied warranty of		 *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 *
+* GNU General Public License version 2 for more details.		 *
+*									 *
+* To read the license either open the file COPYING.txt or		 *
+* visit <http://www.gnu.org/licenses/gpl2.txt>				 *
+*									 *
+*************************************************************************/
+
+
+ul.marketcloud-dashboard-sidebar-list > li:hover,
+ul.marketcloud-dashboard-sidebar-list > li.active {
+    background-color: #111;
+}
+ul.marketcloud-dashboard-sidebar-list > li {
+    display: block;
+    font-size: 16px;
+    width: 200px;
+    position: relative;
+    padding: 10px 5px;
+}
+.marketcloud-dashboard-sidebar-mobile >ul.marketcloud-dashboard-sidebar-list > li {
+    display: block;
+    font-size: 16px;
+    width: 50px;
+    position: relative;
+    padding: 10px 5px 10px 5px;
+}
+.marketcloud-dashboard-sidebar-mobile >ul.marketcloud-dashboard-sidebar-list > li > a {
+    color: white;
+    display: block;
+    text-align: center;
+    margin: 0px;
+    font-size: 20px;
+}
+ul.marketcloud-dashboard-sidebar-list > li > a {
+    color: white;
+    display: block;
+    margin-left: 20px;
+}
+ul.marketcloud-dashboard-sidebar-list > li > a:hover {
+    text-decoration: none;
+}
+.marketcloud-dashboard-sidebar {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    padding: 0px;
+    background-color: #222;
+    box-shadow: -1px 0 0 #2b3136 inset;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.marketcloud-dashboard-sidebar-mobile {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    padding: 0px;
+    background-color: #222;
+    box-shadow: -1px 0 0 #2b3136 inset;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.dashboardPage {
+    display: none;
+}
+.dashboardPage.active {
+    display: block;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus {
+    font-weight: bold;
+}
+.nav > li > a {
+    padding: 10px 35px;
+}
+.virtualObject {
+    border: 2px
+}
+.dashboard-right-pane {
+    margin-left: 200px;
+}
+
+
+@media (max-width: 900px) {
+    .dashboard-right-pane {
+        margin-right: 35px;
+    }
+    .marketcloud-dashboard-sidebar >ul.marketcloud-dashboard-sidebar-list > li {
+        display: block;
+        font-size: 16px;
+        width: 50px;
+        position: relative;
+        padding: 10px 5px 10px 5px;
+    }
+    .marketcloud-dashboard-sidebar >ul.marketcloud-dashboard-sidebar-list > li > a {
+        color: white;
+        display: block;
+        text-align: center;
+        margin: 0px;
+        font-size: 20px;
+    }
+
+    .marketcloud-dashboard-sidebar {
+        position: fixed;
+        top: 0px;
+        bottom: 0;
+        padding: 0px;
+        background-color: #222;
+        box-shadow: -1px 0 0 #2b3136 inset;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .marketcloud-dasboard-sidebar-hide{
+        display: none;
+    }
+}

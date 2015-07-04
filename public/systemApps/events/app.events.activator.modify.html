@@ -1,0 +1,44 @@
+<div id="editEventRunModify">
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+	<style>
+	select[name]{
+		float: none !important;
+	}
+	</style>
+
+	<section class="newEventFormSection" ng-show="showStates">
+		<div id="statusesListInput" style="margin-left: 3%;">
+			<form id="content_statusesList" style="display: block; opacity: 1;">
+				<div class="content_nuovo_scatenante elenco_invitati" ng-repeat="state in states">
+					<input type="radio" name="all_statusesstatusesList" ng-model="$parent.newEvent.triggerState" ng-value="state.name" class="elementNuovi_invitati elementGuests elementi_nuovo_scatenante box_proprietaiPhone" ng-click="show()">
+					<li class="statusName statusNameInvited nome_nuovo_scatenante">{{state.name}}</li>
+					<div class="nome_oggetto_nuovo_scatenante nome_oggetto_invitato">{{state.objectName}}</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	
+	<section class="newEventFormSection" ng-hide="showStates">
+		<div id="selezioneDataNuovoEvento" style="text-align: center;"></div>
+	</section>
+</div>

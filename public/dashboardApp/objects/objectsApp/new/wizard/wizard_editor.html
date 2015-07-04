@@ -1,0 +1,97 @@
+
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+
+<style>
+	.ace_editor  {
+	  height : 500px;
+	}
+</style>
+
+<!-- crea panel -->
+
+<section id="EditorPanel" class="tab-pane" ng-controller="EditorPanel as panell">
+    <ul class="nav nav-tabs" role="tablist">
+      <li ng-class="{active: panell.isSelected(1)}"><a id = "inoClick" ng-click="panell.selectTab(1)" href="">Firmware</a></li>
+      <li ng-class="{active: panell.isSelected(2)}"><a id = "htmlClick" ng-click="panell.selectTab(2)" href="">Application Html</a></li>
+      <li ng-class="{active: panell.isSelected(3)}"><a id = "jsClick" ng-click="panell.selectTab(3)" href="">Application JS</a></li>
+      <li ng-class="{active: panell.isSelected(4)}"><a id = "mongoClick" ng-click="panell.selectTab(4)" href="">DataBase</a></li>
+    </ul>
+    
+    <div class="panel" ng-show="panell.isSelected(1)">
+        <h4>Firmware</h4>
+        <div id='inoEditor' ui-ace="{useWrapMode : true,
+            showGutter: true,
+            theme:'twilight',
+            mode: 'arduino',
+            onLoad: aceLoadedIno}"
+            ng-model="ino">
+        </div>
+    </div>
+
+    <div class="panel" ng-show="panell.isSelected(2)">
+        <h4>Application Html</h4>
+        <div id='htmlEditor' ui-ace="{useWrapMode : true,
+            showGutter: true,
+            theme:'twilight',
+            mode: 'html',
+            onLoad: aceLoadedHtml}"
+            ng-model="html">
+        </div>
+    </div>
+    <div class="panel" ng-show="panell.isSelected(3)">
+        <h4>Application Js</h4>      
+        <div id='jsEditor' ui-ace="{useWrapMode : true,
+            showGutter: true,
+            theme:'twilight',
+            mode: 'javascript',
+            onLoad: aceLoadedJs}"
+            ng-model="js">
+        </div>
+    </div>
+
+    <div class="panel" ng-show="panell.isSelected(4)">
+        <h4>DataBase</h4>
+        <div id='mongoEditor' ui-ace="{useWrapMode : true,
+                showGutter: true,
+                theme:'twilight',
+                mode: 'javascript',
+                onLoad: aceLoadedMongo}"
+                ng-model="mongo">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10" ng-hide="hideCreate">
+            <button  ng-disabled="createIsDisabled" id="create" type="button" ng-click="panell.sendFilesToServer()" class="btn btn-primary btn-lg">Create</button>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10" ng-hide="hideUpdate">
+            <button id="update" type="button" ng-click="panell.updateApioApp()" class="btn btn-primary btn-lg">Update</button>
+        </div>
+        <div  class="col-sm-offset-2 col-sm-10" ng-hide="hideCreateNew">
+            <button ng-disabled="createEditorIsDisabled" id="createNew" type="button" ng-click="panell.createNewApioAppFromEditor()" class="btn btn-primary btn-lg">Create New</button>
+        </div>
+    </div>
+
+</section>
+
+    

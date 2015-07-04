@@ -1,0 +1,51 @@
+<form name="formMicroInfo" class="form-horizontal" role="form" novalidate>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+
+    <dl class="dl-horizontal">
+        <dt>Description</dt>
+        <dd>Select the microcontroller/board you want to use for your Smart Object.</dd>
+    </dl>
+
+    <div class="form-group">
+        <label for="inputFamily" class="col-sm-2 control-label">Family</label>
+        <div class="col-sm-10">
+          <select ng-model="selected.family" ng-change="panel.saveFamily(selected.family)" ng-options="s.family for s in microData" class="form-control input-lg"  id="inputFamily" >
+          </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputType" class="col-sm-2 control-label">Type</label>
+        <div class="col-sm-10">
+          <select ng-model="selected.type" ng-change="panel.saveType(selected.type)" ng-options="b.type for b in selected.family.types" class="form-control input-lg"  id="inputType" >         
+          </select>
+        </div>
+    </div>
+
+  <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" ng-click="panel.previousForm(formMicroInfo.$valid)">Previous</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="formMicroInfo.$invalid" ng-click="panel.nextForm(formMicroInfo.$valid)">Next</button>
+      </div>   
+  </div>
+</form>

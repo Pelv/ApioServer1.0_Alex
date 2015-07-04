@@ -1,0 +1,41 @@
+<div>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+	<dynamicview propertyname="run_event_modifier" label="" load="systemApps/events/app.events.activator.modify.html"></dynamicview>
+	<div class="create_new create_new_event" ng-class="{'create_new_active': true}" ng-click="reset()">+</div>
+	
+	<!-- section che contiene gli attuali stati scatenati -->
+	<section ng-show="showGuests">
+		<div ng-repeat="guest in invitation">
+			<div>{{guest.name}}</div>
+			<div ng-click="deleteGuest()">Elimina</div>
+		</div>
+	</section>
+	
+	<section class="newEventFormSection" ng-hide="showGuests">
+		<div class="content_nuovo_scatenante elenco_invitati" ng-repeat="state in states" style="margin-left: 3%;">
+			<input type="checkbox" name="all_guestslistOfGuests" ng-model="newEvent.triggeredStates[state.name]" class="elementNuovi_invitati box_proprietaiPhone elementi_nuovo_scatenante">
+			<li class="statusNameInvited statusName nome_nuovo_scatenante">{{state.name}}</li>
+			<li class="nome_oggetto_invitato nome_oggetto_nuovo_scatenante">{{state.objectName}}</li>
+		</div>
+	</section>
+</div>

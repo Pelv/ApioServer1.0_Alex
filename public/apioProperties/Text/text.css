@@ -1,0 +1,73 @@
+/*Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino*/
+
+/********************************* LICENSE *******************************
+*									 *
+* This file is part of ApioOS.						 *
+*									 *
+* ApioOS is free software released under the GPLv2 license: you can	 *
+* redistribute it and/or modify it under the terms of the GNU General	 *
+* Public License version 2 as published by the Free Software Foundation. *
+*									 *
+* ApioOS is distributed in the hope that it will be useful, but		 *
+* WITHOUT ANY WARRANTY; without even the implied warranty of		 *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 *
+* GNU General Public License version 2 for more details.		 *
+*									 *
+* To read the license either open the file COPYING.txt or		 *
+* visit <http://www.gnu.org/licenses/gpl2.txt>				 *
+*									 *
+*************************************************************************/
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+	.testoproprieta{}
+
+	.testoinput{
+		margin: auto;
+		float: right;
+		width: 300px;
+		height: 83px;
+		text-align: center;
+		font-size: 40px;
+		border-radius: 16px;
+		-webkit-appearance: none;
+		font-family: sans-serif;
+		font-weight: 100;
+		border: 1px solid;
+		box-shadow: 0 0 3px -1px;
+	}
+}
+@media only screen and (min-width: 481px) and (max-width: 768px){
+	.testoproprieta{}
+
+	.testoinput{
+		margin: auto;
+		float: right;
+		width: 300px;
+		height: 83px;
+		text-align: center;
+		font-size: 40px;
+		border-radius: 16px;
+		-webkit-appearance: none;
+		font-family: sans-serif;
+		font-weight: 100;
+		border: 1px solid;
+		box-shadow: 0 0 3px -1px;
+	}
+}
+@media only screen and (min-width: 769px){
+	.testoproprieta{}
+
+	.testoinput{
+		width: 55%;
+		height: 50px;
+		text-align: center;
+		font-size: 35px;
+		float: right;
+		border-radius: 10px;
+		line-height: 0;
+		border: 1px solid #4197FF;
+		box-shadow: 0 0 3px -1px;
+		color: rgba(3, 3, 3, 0.7);
+	}
+}

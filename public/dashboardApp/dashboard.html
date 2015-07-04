@@ -1,0 +1,113 @@
+<html>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Apio Developer Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bootstrapModal/css/bootstrap-modal.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap-sweetalert/lib/sweet-alert.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/marketcloud-dashboard-sidebar.css">
+
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="javascripts/ngImgCrop_theBliz/ng-img-crop.css" rel="stylesheet" />
+    <style>
+      .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width:500px;
+        height:350px;
+      }
+    </style>
+</head>
+
+<body ng-app="ApioDashboardApplication" ng-controller="ApioDashboardGeneralController" class="container-fluid">
+<div class="row">
+  <div style="padding:0px;" class="col-xs-2">
+    <div class="marketcloud-dashboard-sidebar">
+        <ul style="list-style-image:none;padding-left:0px;" class="marketcloud-dashboard-sidebar-list">
+            <li><a ui-sref="home"><i class="fa fa-home" style="margin-right:10px;"></i><span class="marketcloud-dasboard-sidebar-hide">Home</span></a>
+            </li>
+            <li><a ui-sref="objects.objectsLaunch"><i class="fa fa-th" style="margin-right:10px;"></i><span class="marketcloud-dasboard-sidebar-hide">Objects</span></a>
+            </li>
+            <li><a ng-click="switchToApioOS()" href=""><i  class="fa fa-bell" style="margin-right:10px;"></i><span class="marketcloud-dasboard-sidebar-hide">Apio OS</span></a>
+            </li>
+            <li><a href="http://www.apio.cc/en/wiki"><i class="fa fa-book" style="margin-right:10px;"></i><span class="marketcloud-dasboard-sidebar-hide">Documentation</span></a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+  <div class="dashboard-right-pane">
+    <div class="row">
+      <div class="col-xs-12">
+          <h2 style="text-align:center;"><i class="fa fa-code"></i> Developer Dashboard</h2>
+    </div>
+  </div>
+    <!--this is where the code is injected-->
+      <div class="container-fluid">
+        <div ui-view></div>
+      </div>
+  </div>
+
+</body>
+
+<script src="/javascripts/socket.io.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-ui-utils/ui-utils.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrapModal/js/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="bootstrapModal/js/bootstrap-modal.js"></script> 
+<script src="/javascripts/jquery-cron/cron/jquery-cron.js"></script>
+
+<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/javascripts/ngImgCrop_theBliz/ng-img-crop.js"></script>
+
+
+<script src="/dashboardApp/dashboard.bundle.js"></script>
+<script src="/dashboardApp/home/dashboard_home.js"></script>
+<script src="/dashboardApp/objects/objectsApp/launch/launch.js"></script>
+<script src="/dashboardApp/objects/objectsApp/import/import.js"></script>
+<script src="/dashboardApp/objects/objectsApp/new/new.js"></script>
+<script src="/dashboardApp/objects/objectsApp/new/wizard/wizard.js"></script>
+<script src="/dashboardApp/objects/objectsApp/new/wizard/editor.js"></script>
+<script src="/dashboardApp/events/dashboard_events.js"></script>
+<script src="/dashboardApp/states/dashboard_states.js"></script>
+
+
+<script type="text/javascript" src="/bower_components/angular-ui-ace/ui-ace.js"></script>
+<script type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+<script type="text/javascript" src="javascripts/ace-arduino-syntax/mode-arduino.js"></script>
+<script type="text/javascript" src="/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-h-sweetalert/dist/ngSweetAlert.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-file-upload/angular-file-upload.min.js"></script>
+
+
+</html>

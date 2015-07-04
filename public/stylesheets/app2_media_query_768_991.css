@@ -1,0 +1,721 @@
+/*Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino*/
+
+/********************************* LICENSE *******************************
+*									 *
+* This file is part of ApioOS.						 *
+*									 *
+* ApioOS is free software released under the GPLv2 license: you can	 *
+* redistribute it and/or modify it under the terms of the GNU General	 *
+* Public License version 2 as published by the Free Software Foundation. *
+*									 *
+* ApioOS is distributed in the hope that it will be useful, but		 *
+* WITHOUT ANY WARRANTY; without even the implied warranty of		 *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 *
+* GNU General Public License version 2 for more details.		 *
+*									 *
+* To read the license either open the file COPYING.txt or		 *
+* visit <http://www.gnu.org/licenses/gpl2.txt>				 *
+*									 *
+*************************************************************************/
+
+
+/* Small Devices, Tablets */
+
+/* Ipad2 portrait*/
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+    h1 {
+        font-size: 24px;
+    }
+
+
+
+    .no_box_proprieta_iPhone {
+        display: block;
+        width: auto;
+        height: auto;
+        margin-bottom: 0;
+        padding: 0 0 0 0;
+        border: 0;
+        border-radius: 0;
+        line-height: 0;
+        vertical-align: top;
+        box-shadow: 0 0 0 0;
+        -webkit-transition: none;
+        transition: none;
+    }
+
+    input[type=checkbox] {
+        width: 38px !important;
+        height: 38px;
+        margin-left: 2%;
+        border: 0 solid;
+        border: solid 1px #000;
+        border-radius: 38px;
+        font-size: 1.1em;
+        box-shadow: 0 0 2px -1px inset;
+        transition: all 0.4s ease 0s;
+    }
+
+    .elenco_invitati {
+        display: table;
+        width: 100%;
+        height: 70px;
+        margin-top: 0;
+        line-height: 70px;
+    }
+
+    .elementNuovi_invitati {
+        float: left;
+        width: 5% !important;
+        margin-top: 6%;
+        margin-left: 3%;
+        -webkit-user-drag: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .elementNuovi_invitati li {
+        list-style: none;
+        -webkit-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+    .statusNameInvited {
+        float: left;
+        width: 80%;
+        height: 40px !important;
+        height: 0;
+        margin-left: 2%;
+        font-size: 23px;
+        line-height: 40px;
+        list-style: none;
+    }
+
+    .delete_element {
+        width: 50%;
+        height: 180px;
+        margin-top: -10px;
+        text-align: center;
+        line-height: 160px;
+        color: #fff;
+        background-color: #CC2929;
+    }
+
+    .nome_stato_invitato {
+        width: 38%;
+        margin-top: -15px;
+        margin-right: 20px;
+    }
+
+    #title_state {
+        width: 50%;
+        margin-top: 5%;
+        border: none;
+        text-align: center;
+        font-size: 50px;
+        background: none;
+    }
+
+    .dynvinput {
+        float: right;
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 100%;
+        color: #8e8e8e;
+    }
+
+    .nome_nuovo_oggetto_invitato {
+        display: table;
+        float: none;
+        width: 100%;
+        height: 15px;
+        margin-top: 0;
+        margin-right: 7px;
+        font-size: 13px !important;
+        line-height: 15px;
+    }
+
+    .delete_element {
+        width: 50%;
+        height: 180px;
+        margin-top: -10px;
+        text-align: center;
+        line-height: 160px;
+        color: #fff;
+        background-color: #CC2929;
+    }
+
+    .nome_stato_invitato {
+        width: 38%;
+        margin-top: -15px;
+        margin-right: 20px;
+    }
+
+    #title_state {
+        width: 50%;
+        margin-top: 5%;
+        border: none;
+        text-align: center;
+        font-size: 50px;
+        background: none;
+    }
+
+    .testo_proprietaiPhone {
+        float: left;
+        margin-left: 4.5px;
+        /*font-family: sans-serif;*/
+        font-size: 32px;
+        line-height: 32px !important;
+        padding-top:15px;
+        font-weight: 100;
+        color: #262626;
+    }
+
+    .systembutton {
+        float: right;
+        width: 45px;
+        height: 45px;
+        margin-right: 1%;
+        margin-left: 1%;
+        padding: 0;
+        border: solid 1px rgb(88,170,220);
+        border-radius: 45px;
+        text-align: center;
+        line-height: 45px;
+    }
+
+    .app_home {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+        -webkit-user-drag: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #apioMenu > ul {
+        overflow-x: scroll;
+    }
+
+    .nav > li > a {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .nav > li {
+        display: inline-block;
+    }
+
+    .innerHome {
+        max-height: 65px;
+        max-width: 65px;
+        border-radius: 14px;
+    }
+
+    .homeAppIconName {
+        width: 65px;
+        font-size: 12px;
+    }
+
+    #ApioIconsContainer {
+        margin-left: 5%;
+    }
+
+    .openPanel {
+        width: 100% !important;
+    }
+
+    .box_proprietaiPhone {
+        display: table;
+        width: 100%;
+        padding: 20px 14px 20px 14px;
+        line-height: 36px;
+        box-shadow: 0 5px 4px -7px;
+        -webkit-transition: margin-left 0.6s ease 0s;
+        transition: margin-left 0.6s ease 0s;
+    }
+
+    .dynamicPanel {
+        z-index: 1031;
+        position: fixed;
+        top: 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .content_pulsanteiPhone {
+        float: right;
+        width: 132px;
+        height: 60px;
+        border-radius: 40px;
+        background: none repeat scroll 0 0 #FFFFFF;
+    }
+
+    /* wall*/
+
+    .name_object {
+        height: 5px;
+        margin-top: -10px;
+        margin-right: 9px;
+        font-size: 14px !important;
+    }
+
+    .active_on {
+        background-color: rgb(34,201,34);
+        box-shadow: 0 0 0 0;
+    }
+
+    .active_bacheca {
+        width: 30px;
+        height: 30px !important;
+        margin-top: 1px;
+        margin-right: 5%;
+        border: solid 2px rgb(255,255,255);
+        border-radius: 30px;
+        box-shadow: 0 0 1px 1px rgba(3,3,3,0.57);
+    }
+
+    .activeState {
+        width: 35px;
+        height: 35px !important;
+        margin-top: 9px;
+        margin-right: 5%;
+        border: solid 2px rgb(255,255,255);
+        border-radius: 100px;
+        box-shadow: 0 0 1px 1px rgba(3,3,3,0.57);
+    }
+
+    .modify {
+        float: right !important;
+        width: 25px;
+        height: 20px;
+        text-align: right;
+        font-size: 20px !important;
+    }
+
+    .elementBacheca {
+        display: block;
+        width: 98%;
+        height: 68px;
+        margin-left: 0;
+        padding-top: 15px;
+        padding-bottom: 0;
+        padding-left: 6px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-user-drag: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .elementBacheca li:nth-child(3), .elementBacheca li:nth-of-type(3) {
+        float: right;
+    }
+
+    .elementBacheca li {
+        display: table-caption !important;
+        float: left;
+        height: 20px;
+        font-family: sans-serif;
+        font-size: 18px;
+        list-style: none;
+        -webkit-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+    .option_Bacheca_id_state {
+        width: 80%;
+        -webkit-transform: translate(140%,-80%);
+        transform: translate(140%,-80%);
+    }
+
+    .option_Bacheca_id_state li {
+        float: left !important;
+    }
+
+    .delete {
+        position: absolute;
+        width: 50%;
+        height: 60px !important;
+        margin-top: -7px;
+        text-align: center;
+        font-size: 14px ! important;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #CC2929;
+    }
+
+    .tag {
+        position: absolute;
+        width: 50%;
+        height: 60px !important;
+        margin-top: -7px;
+        text-align: center;
+        font-size: 14px !important;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #29ADCC;
+        -webkit-transform: translateX(100%);
+    }
+
+
+    .statusName {
+        width: 66%;
+        height: 10px;
+        margin-top: -15px;
+        margin-right: 20px;
+    }
+    #wallContainer {
+        margin-top:-30px;
+    }
+
+    #title_state {
+        width: 50%;
+        margin-top: 5%;
+        border: none;
+        text-align: center;
+        font-size: 25px;
+        background: none;
+    }
+
+    .eventname {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 300;
+    }
+
+    .infoEvent {
+        height: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 10px;
+    }
+
+    .createNewEvent {
+        width: 75px;
+        height: 75px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        border: solid 1px rgb(88,170,220);
+        border-radius: 2000px;
+        text-align: center;
+        font-size: 17px;
+        line-height: 75px;
+    }
+
+    .create_new_event {
+        width: 40px;
+        height: 40px;
+        margin-top: 3%;
+        margin-right: auto;
+        margin-left: auto;
+        border: solid 1px;
+        border-radius: 100px;
+        text-align: center;
+        font-size: 22px !important;
+        line-height: 40px;
+        color: #2BA941;
+        -webkit-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+
+    .new_active_back_next {
+        display: inline-block;
+        margin-right: -6%;
+        margin-left: -6%;
+    }
+
+    .create_new_active {
+        color: #fff;
+        background-color: rgba(255,3,3,0.5);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .modifica_Evento_id {
+        float: right !important;
+        width: 25px;
+        height: 45px;
+        text-align: left;
+        font-size: 25px !important;
+    }
+
+    .eventName {
+        width: 60%;
+        height: 10px;
+        line-height: 22px;
+    }
+
+    .elementEventi {
+        display: block;
+        width: 94%;
+        height: 65px;
+        margin-left: 10px;
+        padding-top: 7px;
+        padding-bottom: 0;
+        padding-left: 6px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-user-drag: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .elementEventi li {
+        float: left;
+        font-size: 18px;
+        list-style: none;
+        -webkit-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+    .option_Evento_id_state {
+        float: right !important;
+        position: relative;
+        width: 40%;
+        height: 44px;
+        -webkit-transform: translate(100%,-80%);
+        transform: translate(100%,-80%);
+    }
+
+    .option_Evento_id_state li {
+    }
+
+    .elimina_evento {
+        float: right;
+        position: relative;
+        width: 80%;
+        height: 75px;
+        margin-top: 10px;
+        margin-right: -28%;
+        text-align: center;
+        font-size: 14px;
+        line-height: 75px;
+        color: #fff;
+        background-color: #CC2929;
+    }
+
+    #title_state {
+        width: 50%;
+        margin-top: 5%;
+        border: none;
+        text-align: center;
+        font-size: 50px;
+        background: none;
+    }
+
+    .byDate {
+        width: 70px;
+        height: 70px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        border: solid 1px rgb(88,170,220);
+        border-radius: 70px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 70px;
+    }
+
+    .byStatus {
+        width: 70px;
+        height: 70px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        border: solid 1px rgb(88,170,220);
+        border-radius: 70px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 70px;
+    }
+
+    .box_byStatus {
+        display: inline-block;
+        width: 49%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+        opacity: 1;
+        border:0px !important;
+    }
+
+    .box_byDate {
+        display: inline-block;
+        width: 48%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+        opacity: 1;
+        border:0px;
+    }
+
+    .box_event_organization {
+        display: block;
+        float: left;
+        width: 48%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        opacity: 1;
+    }
+
+    #byStatusinput {
+        margin-top: 2%;
+    }
+
+    .nome_oggetto_nuovo_scatenante {
+        display: table;
+        width: 90%;
+        height: 45px;
+        margin-left: 7.5%;
+        font-size: 15px;
+        line-height: 32px;
+    }
+
+    .nome_oggetto_invitato {
+        display: table !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 0 !important;
+        margin-top: 0px;
+        margin-left:0px;
+        padding-left: 70px;
+        padding-right: 10px !important;
+        text-align: left;
+        font-size: 15px !important;
+        line-height: 15px !important;
+        list-style: none !important;
+    }
+
+    .box_byStatus {
+        display: inline-block;
+        width: 49%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+        border: 0px !important;
+        opacity: 1;
+    }
+
+    .elementGuests_invitati {
+        display: block;
+        width: 99%;
+        height: 60px;
+        padding-left: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-user-drag: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .elementGuests_invitati li {
+        float: left;
+        width: 70%;
+        height: 20px;
+        margin-top: 3%;
+        font-size: 20px;
+        line-height: 20px;
+        list-style: none;
+        -webkit-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+    /*
+    .option_invitati_state {
+        float: left !important;
+        position: static;
+        width: 80%;
+        -webkit-transform: translate(140%,-80%);
+        transform: translate(140%,-80%);
+    }
+    */
+
+    .option_invitati_state li {
+        float: left !important;
+    }
+
+    .elimina_invitati {
+        float: right;
+        width: 100px;
+        height: 60px;
+        margin-top: -45px;
+        margin-left: 40%;
+        text-align: center;
+        font-size: 20px;
+        line-height: 60px;
+        color: #fff;
+        background-color: #CC2929;
+        -webkit-transform: translateX(100%);
+    }
+
+    input[type=radio] {
+        width: 35px !important;
+        height: 35px;
+        margin-left: 2%;
+        border: 0 solid;
+        border: solid 1px #000;
+        border-radius: 100px;
+        font-size: 1.1em;
+        box-shadow: 0 0 2px -1px inset;
+        transition: all 0.4s ease 0s;
+    }
+
+    .goBack {
+        width: 75px;
+        height: 75px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        border: solid 1px rgb(88,170,220);
+        border-radius: 2000px;
+        text-align: center;
+        font-size: 17px;
+        line-height: 75px;
+    }
+
+    .box_goBack {
+        display: block;
+        width: 100%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        opacity: 1;
+    }
+
+    #goBackinput {
+        margin-top: 2%;
+    }
+
+    .goForward {
+        width: 75px;
+        height: 75px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        border: solid 1px rgb(88,170,220);
+        border-radius: 2000px;
+        text-align: center;
+        font-size: 17px;
+        line-height: 75px;
+    }
+
+    .box_goForward {
+        display: block;
+        width: 100%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        opacity: 1;
+    }
+
+    #goForwardinput {
+        margin-top: 2%;
+    }
+
+    #newEventNameinput {
+        width: 170px;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,100 @@
+<div id="ObjectsList">
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+	<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="appModal" class="modal fade">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+	                </button>
+	                <h4 id="myModalLabel" class="modal-title"> {{currentApplication.name}}</h4>
+	            </div>
+	            <div class="modal-body">
+	                <p>Double click on a property value to change its value. Press Enter to save the new value.</p>
+	                <table class="table table-bordered">
+	                    <thead>
+	                        <tr>
+	                            <th>Property</th>
+	                            <th>Value </th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr ng-repeat="(prop,value) in currentApplication.properties">
+	                            <td>{{prop}} </td>
+	                            <td>
+	                                <div ui-keypress="{enter:'handleEnterKeyOnProperty(prop,$event)'}" ng-dblclick="handleDoubleClickOnProperty($event)" class="propertyValueContainer">{{currentApplication.properties[prop]}}</div>
+	                            </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	            </div>
+	            <div class="modal-footer">
+	               
+	               <div class="btn-toolbar" role="toolbar" style="float:left">
+	                  <div class="btn-group">
+	                    <button type="button" class="btn btn-default" aria-label="Delete" ng-click="deleteApioApplication()"><span class="fa fa-times" aria-hidden="true"></span></button>
+	                    <button type="button" class="btn btn-default" aria-label="Modify" ng-click="modifyApioApplication()"><span class="fa fa-edit" aria-hidden="true"></span></button>
+	                    <button type="button" class="btn btn-default" aria-label="Export" ng-click="exportInoFolder()"><span class="fa fa-cloud-download" aria-hidden="true"></span></button>
+	                    <button type="button" class="btn btn-default" aria-label="Export" ng-click="exportApioApplication()"><span class="fa fa-file-code-o" aria-hidden="true"></span></button>
+	                  </div>
+	               </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<div style="margin-top:100px;" class="row">
+	    <div ng-repeat="obj in objects track by $index" style="height:100px;text-align:center;margin-top:50px;" class="col-lg-2 col-xs-4">
+	        <button ng-click="launchApplication(obj)" ng-class="{virtual : virtualObject}" style="width:100px;height:100px;" class="btn btn-default btn-lg"><img class="launcherIcon" ng-src="/javascripts/applications/{{obj.objectId}}/icon.png" style="width:60px;" onError="this.onerror=null;this.src='/images/Apio_Logo.png';" />
+	        </button>
+	        <div>
+	        	<b style="font-size:12px;">{{obj.name}}</b>
+	        </div>
+	        <!--<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade {{obj.objectId}}">
+	            <div class="modal-dialog">
+	                <div class="modal-content">
+	                    <div class="modal-header">
+	                        <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+	                        </button>
+	                        <h4 id="myModalLabel" class="modal-title"> {{obj.name}}</h4>
+	                    </div>
+	                    <div class="modal-body">
+	                        <div ng-repeat="(key,value) in obj.properties" style="border-bottom:1px solid #333;padding:5px;">
+	                            <div class="row">
+	                                <div class="col-xs-8"><b>{{key}}</b>
+	                                </div>
+	                                <div class="col-xs-4">
+	                                    <div ng-click="alert('')">{{value}}</div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>-->
+	    </div>
+	</div>
+
+</div>

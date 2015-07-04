@@ -1,0 +1,132 @@
+angular.module('ApioApplication').controller('ApioWallController', ['$scope', '$http', 'socket', 'objectService', 'currentObject', '$rootScope',
+    function($scope, $http, socket, objectService, currentObject, $rootScope) {
+        document.getElementById("targetBody").style.position = "";
+        $("#appApio").html("");
+        $http.get('/apio/state')
+            .success(function(data) {
+                $scope.states = data;
+
+            });
+        $scope.currentApplication = null;
+        socket.on('apio_state_update', function(state) {
+
+            console.log("Arrivata modifica di uno stato dal server, la applico")
+            console.log(state);
+            $scope.states.forEach(function(e, i, a) {
+                if (e.name == state.name)
+                    e.properties = state.properties
+                    //for (k in state.properties)
+                    //e.properties[k] = state.properties[k];
+            })
+        });
+
+
+        socket.on('apio_state_delete', function(state) {
+            var k = 0;
+            $scope.states.forEach(function(e, i, a) {
+                if (e.name == state.name) {
+                    $scope.states.splice(k, 1);
+                }
+                k++;
+            })
+        })
+
+        socket.on('apio_state_new', function(state) {
+            alert("Nuovo stato!")
+            $scope.states.push(state);
+            $scope.$apply();
+        })
+
+        $scope.launchState = function(state) {
+            $http.post('/apio/state/apply', {
+                state: state
+            })
+                .success(function() {
+                    console.log("Stato applicato con successo")
+                })
+                .error(function() {
+                    console.log("Errore nell'applicazione dello stato")
+                })
+
+        }
+
+        $scope.deleteState = function(state) {
+            $http.delete('/apio/state/' + encodeURIComponent(state.name))
+                .success(function(s, status, header, config) {
+                    console.log("Stato " + state.name + " eliminato con successo");
+                })
+                .error(function(s, status, header, config) {
+                    console.log("Stato non eliminato");
+                })
+        };
+
+        $scope.editState = function(state) {
+            $("#wallContainer").css("width", "84%");
+            var id = state.objectId;
+            currentObject.recordingStateName(state.name);
+            //$("#appApio").css("width", Apio.appWidth + "px");
+            //$("#appApio").addClass("proprieta");
+            $("#ApioApplicationContainer").css("width", Apio.appWidth + "px");
+            $("#ApioApplicationContainer").addClass("proprieta");
+            document.getElementById("targetBody").style.position = "fixed";
+            Apio.newWidth = Apio.appWidth;
+            objectService.getById(id).then(function(d) {
+                $scope.currentObject = d.data;
+                // new thing!
+                currentObject.set(d.data);
+
+                /*if ($scope.currrentApplication == null) {
+                    $.get("applications/" + id + "/" + id + ".html", function(data) {
+                        $("#appApio").html($(data));
+                        $("#appApio").find("h2").text($scope.currentObject.name);
+                        setTimeout(function() {
+                            for (key in state.properties) {
+                                currentObject.record(key, state.properties[key]);
+                                currentObject.get().properties[key] = state.properties[key];
+                            }
+                            currentObject.isModifying(true);
+                            $("#registra_statoinput").trigger("click");
+                            $("#registra_statoinput").trigger("tap");
+                        }, 300);
+                    });
+
+                    $('body').animate({
+                        scrollLeft: document.body.scrollWidth
+                    }, 700, function() {
+
+                    });
+
+                    //});
+
+                }*/
+
+                $.get("applications/" + id + "/" + id + ".html", function(data) {
+                    if (window.innerWidth > 769)
+                        $("#ApioIconsContainer").css("width", "77%");
+
+                    $("#ApioApplicationContainer").html($(data));
+                    $("#ApioApplicationContainer").find("h2").text($scope.currentObject.name);
+                    setTimeout(function() {
+                        for (key in state.properties) {
+                            currentObject.record(key, state.properties[key]);
+                            currentObject.get().properties[key] = state.properties[key];
+                        }
+                        currentObject.isModifying(true);
+                        $("#registra_statoinput").trigger("click");
+                        $("#registra_statoinput").trigger("tap");
+                    }, 300);
+                    $("#ApioApplicationContainer").show("slide", {
+                        direction: 'right'
+                    }, 500, function() {
+                        $scope.$apply();
+                    });
+                });
+
+            });
+
+
+
+        }
+
+    }
+]);

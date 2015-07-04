@@ -1,0 +1,197 @@
+<div>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+	<style>
+		@media (min-width: 320px) and (max-width: 600px) {
+			.button-back{
+				font-size: 74px;
+				color: rgba(80, 99, 131, 0.72);
+				//border-radius: 300px;
+				border: none;
+			}
+            .go_to_home{
+                width: 70px;
+                height: 70px;
+            }
+
+			.topappbuttoncontainer{
+				width: 100%;
+			}
+
+			.topappbutton{
+				width: 155px !important;
+				height: 155px;
+				line-height: 155px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				padding: 0;
+				border-radius: 2000px;
+				border: solid 1px rgb(88, 170, 220);
+				font-size: 35px;
+				margin-top: 20%;
+				margin-bottom: 20%;
+			}
+
+			.topappbuttonspan{
+				font-size: 35px;
+				font-family: helvetica;
+				font-weight: 300;
+			}
+
+			.topapppubblica{}
+		}
+		@media (min-width: 601px) and (max-width: 1000px){
+			.button-back{
+				font-size: 74px;
+				color: rgba(80, 99, 131, 0.72);
+				//border-radius: 300px;
+				border: none;
+			}
+            .go_to_home{
+                width: 70px;
+                height: 70px;
+            }
+
+			.topappbuttoncontainer{
+				width: 100%;
+			}
+
+			.topappbutton{
+				width: 155px !important;
+				height: 155px;
+				line-height: 155px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				padding: 0;
+				border-radius: 2000px;
+				border: solid 1px rgb(88, 170, 220);
+				font-size: 35px;
+				margin-top: 20%;
+				margin-bottom: 20%;
+			}
+
+			.topappbuttonspan{
+				font-size: 35px;
+				font-family: helvetica;
+				font-weight: 300;
+			}
+
+			.topapppubblica{}
+		}
+		@media (min-width: 1001px){
+			.button-back{
+				font-size: 34px;
+				color: rgba(80, 99, 131, 0.72);
+				//border-radius: 300px;
+				border: none;
+			}
+            .go_to_home{
+                height: 60px;
+                width: 60px;
+            }
+
+			.topappbuttoncontainer{
+				width: 5%;
+				margin-left: auto;
+				margin-right: auto;
+				display: table;
+			}
+
+			.topappbutton{
+				margin: 0;
+				text-align: center;
+				padding: 0;
+				float: right;
+				width: 86px;
+				height: 86px;
+				line-height: 86px;
+				border-radius: 2000px;
+				border: solid 1px rgb(88, 170, 220);
+				margin-left: 10px;
+				margin-right: 10px;
+				margin-top: 20%;
+				margin-bottom: 20%;
+			}
+
+			.topappbuttonspan{
+				font-size: 18px;
+				font-family: helvetica;
+			}
+
+			.topapppubblica{
+				font-size: 13px;
+			}
+		}
+	</style>
+	<div class="topAppApplication">
+<div class="col-xs-3">
+            <div class="btn btn-default btn-lg button-back">
+<span class="glyphicon glyphicon-circle-arrow-left" ng-show="!currentObject.isRecording() &amp;&amp; !currentObject.isModifying() &amp;&amp; !showPublishButton" ng-click="goBackToHome()"></span>
+</div>
+			<div id="menu_object_networkinput" class="systembutton pubblica ng-hide" ng-class="{'pubblica_on': currentObject.recordLength() != '0'}" ng-show="currentObject.isRecording() &amp;&amp; !currentObject.isModifying() &amp;&amp; !showPublishButton" ng-click="useRecording()">Usa</div>
+			<div id="save" class="systembutton pubblica ng-hide" ng-class="{'pubblica_on': currentObject.recordLength() != '0'}" ng-show="currentObject.isModifying()" ng-click="saveModify()">Salva</div>
+			<div id="publish" class="systembutton pubblica topapppubblica ng-hide" ng-class="{'pubblica_on': showPublishButtonActive}" ng-show="showPublishButton" ng-click="publishRecording()">Pubblica</div>
+		</div>
+		<div class="appName">{{object.name}}</div>
+		<div class="col-xs-3">
+			<div id="registra_statoinput" class="systembutton" ng-click="startRecording()" ng-hide="currentObject.isRecording()">
+				<span>[REC]</span>
+			</div>
+			<div id="registra_statoinput" class="systembutton rec" ng-click="stopRecording()" ng-show="currentObject.isRecording()"></div>
+		</div>
+		<div class="col-xs-12">
+			<div id="intro_rec" ng-show="currentObject.isRecording() && currentObject.recordLength() == 0" style="text-align:center;margin-bottom:10px;">Seleziona uno o più stati</div>
+			<div id="intro_rec" ng-show="currentObject.isRecording() && currentObject.recordLength() > 0"  style="text-align:center;margin-bottom:10px;">"Tap" su Usa per usare questo stato</div>
+		</div>
+	</div>
+
+	<div ng-show="recStep === 'EventOrWall'">
+		<div class="topappbuttoncontainer">
+			<div id="wallbutton" class="topappbutton" ng-click="wallRecording()"><span class="topappbuttonspan">Bacheca</span></div>
+		</div>
+		<div class="topappbuttoncontainer">
+			<div id="eventbutton" class="topappbutton" ng-click="eventRecording()"><span class="topappbuttonspan">Eventi</span></div>
+		</div>
+	</div>
+	<div class="testoproprieta" ng-show="recStep === 'StatusNameChoice' || recStep === 'EventNameChoice'">
+		<!--Begin: Text element for status-->
+		<div id="status" class="box_proprietaiPhone">
+		    <div id="statuslabel" class="testo_proprietaiPhone">Stato:</div>
+		    <div class="testoproprieta">
+		    	<input id="statusinput" ng-change="showPublish()" ng-model="newStatusName" class="testoinput" type="text">
+			</div>
+		</div>
+		<!--End-->
+	</div>
+	<div class="testoproprieta" ng-show="recStep === 'EventNameChoice'">
+		<!--Begin: Text element for event-->
+		<div id="event" class="box_proprietaiPhone">
+		    <div id="eventlabel" class="testo_proprietaiPhone">Evento:</div>
+		    <div class="testoproprieta">
+		    	<input id="eventinput" ng-change="showPublish()" ng-model="newEventName" class="testoinput" type="text">
+			</div>
+		</div>
+		<!--End-->
+	</div>
+</div>

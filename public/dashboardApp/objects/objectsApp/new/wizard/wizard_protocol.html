@@ -1,0 +1,55 @@
+<form name="formProtocolInfo" class="form-horizontal" role="form" novalidate>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+
+  <dl class="dl-horizontal">
+        <dt>Description</dt>
+        <dd>Select the way your Smart Object will comunicate with the Object Network and give it it's unique address. If the XBee is selected, you can find the address below your phisical device.</dd>
+  </dl>
+
+  <div class="form-group">
+    <label for="protocol" class="col-sm-2 control-label">Type</label>
+    <div class="col-sm-10">
+      <select ng-model="newObject.protocol" class="form-control" id="protocol" required>
+        <option value="l">LightWeight Mesh</option>
+        <option value="z">XBee</option>
+        <option value="b">Bluetooth</option>
+        <option value="w">Wi-Fi</option>
+        <option value="s">Serial</option>
+    </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputProtocolAddress" class="col-sm-2 control-label">Address</label>
+    <div class="col-sm-10">
+      <input ng-model="newObject.address" type="text" class="form-control" id="inputProtocolAddress" placeholder="Protocol address" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" ng-click="panel.previousForm(formProtocolInfo.$valid)">Previous</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="formProtocolInfo.$invalid" ng-click="panel.nextForm(formProtocolInfo.$valid)">Next</button>
+      </div>   
+  </div>
+</form>

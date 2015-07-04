@@ -1,0 +1,70 @@
+/*Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino*/
+
+/********************************* LICENSE *******************************
+*									 *
+* This file is part of ApioOS.						 *
+*									 *
+* ApioOS is free software released under the GPLv2 license: you can	 *
+* redistribute it and/or modify it under the terms of the GNU General	 *
+* Public License version 2 as published by the Free Software Foundation. *
+*									 *
+* ApioOS is distributed in the hope that it will be useful, but		 *
+* WITHOUT ANY WARRANTY; without even the implied warranty of		 *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 *
+* GNU General Public License version 2 for more details.		 *
+*									 *
+* To read the license either open the file COPYING.txt or		 *
+* visit <http://www.gnu.org/licenses/gpl2.txt>				 *
+*									 *
+*************************************************************************/
+
+
+@media only screen and (min-width: 320px)  and (max-width: 600px){
+    select{
+        -webkit-appearance: none;
+        width: 522px;
+        margin-top: 21px;
+        height: 83px;
+        font-size: 40px;
+        color: grey;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #4197FF;
+        border-radius: 16px;
+        background: none repeat scroll 0 0 #FFFFFF;
+        font : "Trebuchet MS" ;
+        line-height: 22px;
+    }
+}
+@media only screen and (min-width: 601px)  and (max-width: 1000px){
+    select{
+        -webkit-appearance: none;
+        width: 300px;
+        float: right;
+        height: 83px;
+        font-size: 40px;
+        color: grey;
+        border: 1px solid #4197FF;
+        border-radius: 16px;
+        background: none repeat scroll 0 0 #FFFFFF;
+        font : "Trebuchet MS" ;
+        line-height: 30px;
+    }
+}
+@media (min-width: 1101px){
+    select{
+        -webkit-appearance: none;
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #4197FF;
+        border-radius: 16px;
+        color: grey;
+        font-size: 25px;
+        height: 40px;
+        margin-right: auto;
+        width: 150px;
+        float: right;
+        margin-top: 2%;
+        font : "Trebuchet MS" ;
+        line-height: 22px;
+    }
+}

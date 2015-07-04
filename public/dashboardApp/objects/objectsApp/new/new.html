@@ -1,0 +1,81 @@
+<section id="newApp" class="tab-pane">
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+    <h3>New App</h3>
+    <div class="form-group">
+        <button id="showWizard" type="button" ng-click="showWizard()" ng-disabled="wizardDisabled" class="btn btn-primary btn-lg">Wizard</button>
+        <button id="showNewEditor" type="button" ng-click="showNewEditor()" ng-disabled="newEditorDisabled" class="btn btn-primary btn-lg">Editor</button>
+    </div>
+    <section id="NewEditorPanel" ng-hide="hideNewEditor">
+        <h3>New Editor</h3>
+        <wizard-editor></wizard-editor>
+    </section>
+    <section id="WizardPanel" class="tab-pane" ng-controller="WizardPanel as panel" ng-hide="hideWizard">
+        <h3 ng-hide="hide" >Wizard</h3>
+        <div ng-hide="hide" class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{panel.progressBarValue}}" aria-valuemin="0" aria-valuemax="100" style="width: {{panel.progressBarValue}}%;">
+            {{panel.progressBarValue}}%
+          </div>
+        </div>
+        <ul ng-hide="hide" class="nav nav-tabs" role="tablist">
+          <li ng-class="{active: panel.isSelected(1), disabled: panel.isDisabled(1)}"><a ng-click="panel.selectTab(1)" href="">Info</a></li>
+          <li ng-class="{active: panel.isSelected(2), disabled: panel.isDisabled(2)}"><a ng-click="panel.selectTab(2)" href="">Properties</a></li>
+          <li ng-class="{active: panel.isSelected(3), disabled: panel.isDisabled(3)}"><a ng-click="panel.selectTab(3)" href="">Micro</a></li>
+          <li ng-class="{active: panel.isSelected(4), disabled: panel.isDisabled(4)}"><a ng-click="panel.selectTab(4)" href="">Pins</a></li>
+          <li ng-class="{active: panel.isSelected(5), disabled: panel.isDisabled(5)}"><a ng-click="panel.selectTab(5)" href="">Comunication</a></li>
+          <li ng-class="{active: panel.isSelected(6), disabled: panel.isDisabled(6)}"><a ng-click="panel.selectTab(6)" href="">Summary</a></li>
+          <li ng-class="{active: panel.isSelected(7), disabled: panel.isDisabled(7)}"><a ng-click="panel.selectTab(7)" href="">Editor</a></li>
+        </ul>
+        
+        <div class="panel" ng-show="panel.isSelected(1)">
+            <h4>Info</h4>
+            <wizard-object></wizard-object>
+        </div>
+
+        <div class="panel" ng-show="panel.isSelected(2)">
+            <h4>Properties</h4>
+            <wizard-properties></wizard-properties>
+        </div>
+
+        <div class="panel" ng-show="panel.isSelected(3)">
+            <h4>Micro</h4>
+            <wizard-micro></wizard-micro>
+        </div>
+
+        <div class="panel" ng-show="panel.isSelected(4)">
+            <h4>Pins</h4>
+            <wizard-pins></wizard-pins>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(5)">
+            <h4>Protocol</h4>
+            <wizard-protocol></wizard-protocol>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(6)">
+            
+            <wizard-summary></wizard-summary>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(7)">
+            <h4>Editor</h4>
+            <wizard-editor></wizard-editor>
+        </div>
+    </section>
+</section>

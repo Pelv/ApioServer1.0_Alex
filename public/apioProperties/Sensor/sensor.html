@@ -1,0 +1,30 @@
+<div id="{{propertyname}}" class="box_proprietaiPhone" issensor="true">
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+    <link type="text/css" rel="stylesheet" href="apioProperties/Sensor/sensor.css"/>
+    <div id="{{propertyname}}flag" ng-show="currentObject.isRecording()  && !isRecorded()" ng-click="addPropertyToRecording()"  class="rec_flag"></div>
+    <div id="{{propertyname}}label" class="testo_proprietaiPhone"  ng-click="removePropertyFromRecording()">{{label}}</div>
+    <div ng-model="model" class="sensorinput">{{model}}</div>
+    <div >
+	    <input id="{{propertyname}}sensor" ng-show="currentObject.isRecording() && isRecorded()" ng-model="model" class="modify-sensor" type="range" min="{{min}}" max="{{max}}" step="{{step}}">
+	</div>
+</div>

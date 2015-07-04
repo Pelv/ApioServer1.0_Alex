@@ -1,0 +1,1270 @@
+/*Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino*/
+
+/********************************* LICENSE *******************************
+*									 *
+* This file is part of ApioOS.						 *
+*									 *
+* ApioOS is free software released under the GPLv2 license: you can	 *
+* redistribute it and/or modify it under the terms of the GNU General	 *
+* Public License version 2 as published by the Free Software Foundation. *
+*									 *
+* ApioOS is distributed in the hope that it will be useful, but		 *
+* WITHOUT ANY WARRANTY; without even the implied warranty of		 *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 *
+* GNU General Public License version 2 for more details.		 *
+*									 *
+* To read the license either open the file COPYING.txt or		 *
+* visit <http://www.gnu.org/licenses/gpl2.txt>				 *
+*									 *
+*************************************************************************/
+
+
+@charset "UTF-8";
+
+@-webkit-keyframes scroll-left{
+	from { left: 0%; }
+	to { left: -100%; }
+}
+
+@keyframes scroll-left{
+	from { left: 0%; }
+	to { left: -100%; }
+}
+
+/*SMARTPHONE*/
+@media (min-width: 320px) and (max-width: 600px) {
+	
+
+
+	.systembutton{
+        text-align: center;
+        padding: 0;
+        float: right;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 2000px;
+        border: solid 1px rgb(88, 170, 220);
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+	.flag_on{
+		height: 70px;
+		position: absolute;
+		background-color: rgb(232, 232, 232);
+		z-index: 12;
+		opacity: 0.7;
+		width: 100%;
+		margin-left: -10.6px;
+		margin-top: -10px;
+		background-position: initial initial;
+		background-repeat: initial initial;
+	}
+	.flag_off{
+		height: 0;
+		position: absolute;
+		background-color: rgb(232, 232, 232);
+		z-index: 12;
+		opacity: 0.7;
+		width: 100%;
+		margin-left: -10.6px;
+		margin-top: -10px;
+		background-position: initial initial;
+		background-repeat: initial initial;
+
+	}
+	.app_home_open_app_dettagli{
+		
+	}
+	.app_home_close_app_dettagli{
+		
+	}
+
+#view_app{
+
+	margin-top: 0px !important;
+}
+
+#controllore{
+transition:all 0.4s ease 0s;
+-webkit-transition:all 0.4s ease 0s;
+	overflow: auto;
+	width: 100%;
+}
+
+body{
+	/*overflow: scroll;*/
+	background-color:#E8E8E8;
+	height:auto; 
+	width:100%; 
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+.voci_menu{
+    border: 1px solid #E8E8E8;
+    color: #808080;
+    font-family: sans-serif;
+    font-size: 80px;
+    font-weight: lighter;
+    height: 180px;
+    line-height: 180px;
+    width: 100%;
+    }
+
+.iPhone_menu_class {
+    font-size: 40px;
+    height: 150px;
+    line-height: 90px;
+    margin-top: -40px;
+}
+
+#cdgao{
+ transition:all 0.4s ease 0s;
+ -webkit-transition:all 0.4s ease 0s;
+ line-height: 190px;
+ font-weight: lighter;
+    margin-top: 10px;
+    position: fixed;
+    width: 100%;
+    height:0px;
+      font-size: 148px;
+       text-align: center;
+        color: #8E8E8E;
+    font-family: sans-serif;
+    opacity:0;
+    background: none repeat scroll 0 0 #F8F8F8;
+    z-index: 11;
+    }
+    
+.cdgao_aperto{
+        height: 140px !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    }
+.cdgao_chiuso{
+        height: 0px !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    }
+	.open_app_dettagli{
+		/*height: 343px !important;*/
+		-webkit-transform: translateX(258%);
+		opacity: 1 !important;
+		z-index: 20 !important;
+		display: block !important;
+		height: 90% !important;
+		opacity: 1;		
+	}
+#app_dettagli{
+	-webkit-user-drag: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+  	border: 0px solid;
+	width: 100%;
+  	height:0px;
+  	font-size: 1.1em;
+}
+
+#controller_iphone_app{
+	-webkit-overflow-scrolling: touch;
+	-webkit-user-drag: none;
+    border-radius: 6px;
+    -webkit-user-select: none;
+	transition:all 0.4s ease 0s;
+	-webkit-transition:all 0.4s ease 0s;
+    margin-right:auto;
+    margin-left: auto;
+    margin-top: 33px;
+    width:100%;
+    }
+.controller{
+	transition: all 0.4s ease 0s;
+	-webkit-transition:all 0.4s ease 0s;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+  	border: 0px solid;
+	width: 700px;
+  	-webkit-overflow-scrolling: touch;
+	-webkit-user-drag: none;
+  	font-size: 1.1em;
+	opacity:0;
+	-webkit-opacity:0;
+	}
+.proprieta{
+-webkit-overflow-scrolling: touch;
+	-webkit-user-drag: none;
+ -webkit-user-select: none;
+ background: rgba(249, 249, 249, 0.98);
+/* background: none repeat scroll 0 0 #E8E8E8;*/
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+  	border: 0px solid;
+	width: 100% !important;
+  	height: 1200px !important;
+  	font-size: 1.1em;
+   /*position:absolute;*/
+   z-index:6;
+    
+}
+.iPhone_nome_app {
+opacity: 1;
+-webkit-transform: translateY(170%);
+font-size:47px;
+}
+ .testo_proprietaiPhone{
+	color: #262626;
+    float: left;
+    font-family: sans-serif;
+    font-size: 50px;
+    margin-left: 10px;
+    font-weight: 100;
+    }
+
+
+ .box_proprietaiPhone {
+ font-family: helvetica;
+ -webkit-transition: margin-left 0.6s ease 0s;
+ 	transition: margin-left 0.6s ease 0s;
+	box-shadow: 0 5px 4px -7px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: table;
+	width: 100%; 
+	line-height: 80px;
+	}
+ 
+ 
+ 
+/*TRIGGER*/
+input[type=button][name="iPhone"] {
+   -webkit-appearance: none;
+   	border: 0 solid;
+    border-radius: 80px;
+    font-size: 1.1em;
+    height: 80px;
+    transition: all 0.4s ease 0s;
+    width: 80px;
+    box-shadow: 0 0 2px -1px inset;
+}
+
+	.menu_app_aperto {
+		opacity: 1;
+background: none repeat scroll 0 0 rgb(198, 198, 198);	
+	line-height: 150px;
+		text-align: center;
+		height: 150px !important;
+	}
+	.menu_app_chiuso {
+		opacity: 1;
+		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+		line-height: 150px;
+		text-align: center;
+		height: 0 !important;
+	}
+	.sotto_menu_app_aperto{
+		height: 200%;
+	}
+	#voci_di_aggiungi{
+	background: none repeat scroll 0 0 rgb(198, 198, 198);
+	z-index: 5000;
+	position: relative;
+		/*-webkit-transform: translateY(40%);*/
+	}
+
+}
+
+/*SMARTPHONE 2 (IPHONE E TABLET)*/
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+
+
+
+
+#centro_notifiche_preview{
+	color: #fff;
+	margin-top:-1.3%;
+	background: rgba(0, 0, 0, 0.91);
+	-webkit-transition:all 0.5s ease 0s;
+	transition:all 0.5s ease 0s;
+	width:100%;
+	position: fixed;
+	display: table-caption;
+	height: 0px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 100;
+
+}
+.centro_notifiche_preview_open{
+
+	height: 150px !important;
+	background: #000;
+	opacity: 1;
+}
+
+.dynamimultiple{
+	-webkit-appearance:none;
+	width:300px;
+	float: right;
+	height:83px;
+	font-size:40px;
+	color:grey;
+	border: 1px solid #4197FF;
+	border-radius: 16px;
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+#centro_notifiche{
+	color: #fff;
+	margin-top: 11.3%;
+	background: rgba(0, 0, 0, 0.83);
+	-webkit-transition:all 0.5s ease 0s;
+	transition:all 0.5s ease 0s;
+	width:100%;
+	position: fixed;
+	display: table-caption;	
+	height: 0px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 100;
+}
+.notifiche_close{
+	height: 0px;
+}
+.notifiche_open{
+
+	height: 1200px !important;
+	background: #000;
+	opacity: 1;
+}
+
+.app_home{
+		-webkit-transition:all 0.5s ease 0s;
+		transition:all 0.5s ease 0s;
+		-webkit-overflow-scrolling: touch;
+		-webkit-user-drag: none;
+		margin-left: auto;
+        margin-right: auto;
+        /*margin-top: 150px;*/
+	width:100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	}
+	 .systembutton{
+        text-align: center;
+        padding: 0;
+        float: right;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 2000px;
+        border: solid 1px rgb(88, 170, 220);
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+	.flag_on{
+		height: 70px;
+		position: absolute;
+		background-color: rgb(232, 232, 232);
+		z-index: 12;
+		opacity: 0.7;
+		width: 100%;
+		margin-left: -10.6px;
+		margin-top: -10px;
+		background-position: initial initial;
+		background-repeat: initial initial;
+	}
+	.flag_off{
+		height: 0;
+		position: absolute;
+		background-color: rgb(232, 232, 232);
+		z-index: 12;
+		opacity: 0.7;
+		width: 100%;
+		margin-left: -10.6px;
+		margin-top: -10px;
+		background-position: initial initial;
+		background-repeat: initial initial;
+
+	}
+
+
+#view_app{
+	margin-top: 0px !important;
+}
+#controllore{
+transition:all 0.4s ease 0s;
+-webkit-transition:all 0.4s ease 0s;
+/* -webkit-overflow-scrolling: touch;
+*/
+overflow: auto;
+	width: 100%;
+	}
+
+body{
+	/*overflow: scroll;*/
+	background-color: #E8E8E8;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+body li,ul,div,a,span{
+	-webkit-overflow-scrolling: touch;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+}
+	.open_app_dettagli{
+		/*height: 343px !important;*/
+		-webkit-transform: translateX(100%);
+		opacity: 1 !important;
+		z-index: 20 !important;
+		display: block !important;	
+		}
+	.app_home_open_app_dettagli{
+		
+	}
+	.app_home_close_app_dettagli{
+		
+	}
+#cdgao{
+transition:all 0.4s ease 0s;
+-webkit-transition:all 0.4s ease 0s;
+line-height: 150px;
+font-weight: lighter;
+   margin-top: 0px;
+   position: fixed;
+   width: 100%;
+   height:0px;
+     font-size: 148px;
+      text-align: center;
+       color: #8E8E8E;
+   font-family: sans-serif;
+   opacity:0;
+   background: none repeat scroll 0 0 #F8F8F8;
+   z-index: 11;    }
+.cdgao_aperto{
+    height: 160px !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    }
+.cdgao_chiuso{
+        height: 0px !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    }
+
+.voci_menu{
+    border: 1px solid #E8E8E8;
+    color: #808080;
+    font-family: sans-serif;
+    font-size: 80px;
+    font-weight: lighter;
+    height: 180px;
+    line-height: 180px;
+    width: 100%;
+    }
+
+
+#controller_iphone_app{
+	-webkit-user-select: none;
+	width:100%;    
+   	margin: auto;
+   	-webkit-transition:all 0.4s ease 0s;
+   	transition:all 0.4s ease 0s;
+}
+
+.iPhone_menu_class {
+    font-size: 40px;
+    line-height: 90px;
+    margin-top: -40px;
+}
+
+#menu_bar{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px -4px;
+    color: #1f1f1f;
+    font-family: sans-serif;
+    position: fixed;
+    text-align: center;
+	z-index: 10;
+	width:100%;
+ 	opacity: 0.9;
+ 	padding-right: 3%;
+ 	font-weight: 100;
+ 	overflow-x: scroll;
+ 	overflow-y: hidden;
+}
+#app_dettagli{
+	-webkit-user-drag: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+  	border: 0px solid;
+	width: 100%;
+  	height:0px;
+  	font-size: 1.1em;
+}
+
+.iPhone_nome_app {
+	opacity: 1;
+	width: 90%;
+	height: 100px;
+	left: 5%;
+	position: absolute;
+	-webkit-transition: color 0.2s ease-in-out 0.1s;
+	transition: color 0.2s ease-in-out 0.1s;
+	-webkit-transition: background 0.3s ease-out 0s;
+	transition: background 0.3s ease-out 0s;
+	
+	line-height: 100px;
+	font-size:47px;
+} 
+   
+    .controller{
+	transition: all 0.4s ease 0s;
+	-webkit-transition:all 0.4s ease 0s;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+  	border: 0px solid;
+	width: 100%;
+  	font-size: 1.1em;
+	opacity:0;
+	-webkit-opacity:0;
+	}
+.proprieta{
+ -webkit-user-select: none;
+ background: rgba(249, 249, 249, 0.98);
+ /*background: none repeat scroll 0 0 #E8E8E8;*/
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+  	border: 0px solid;
+	width: 100% !important;
+  	height: 1200px !important;
+  	font-size: 1.1em;
+   display:inline-block !important;
+   /*position:absolute;*/
+   z-index:6;
+    
+}
+
+.testo_proprietaiPhone{
+	color: #262626;
+    float: left;
+    font-family: sans-serif;
+    font-size: 50px;
+    margin-left: 10px;
+    font-weight: 100;
+}
+
+
+    
+ .box_proprietaiPhone {
+ -webkit-transition: margin-left 0.6s ease 0s;
+ 	transition: margin-left 0.6s ease 0s;
+	box-shadow: 0 5px 4px -7px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: table;
+	width: 100%; 
+	line-height: 80px;
+	font-family: helvetica;
+	}
+
+
+input[type=button][name="iPhone"] {
+   -webkit-appearance: none;
+   	border: 0 solid;
+    border-radius: 80px;
+    font-size: 1.1em;
+    height: 80px;
+    transition: all 0.4s ease 0s;
+    width: 80px;
+    box-shadow: 0 0 2px -1px inset;
+}
+	input[type=checkbox]{
+		/*-webkit-appearance: none;
+		*/border: 0 solid;
+		border-radius: 80px;
+		font-size: 1.1em;
+		height: 80px;
+		margin-left: 2%;
+		border:solid 1px #000;
+		transition: all 0.4s ease 0s;
+		width: 80px !important;
+		box-shadow: 0 0 2px -1px inset;
+	}
+	input[type=checkbox]:checked {
+		background-color: rgba(71, 206, 38, 0.53);	
+		border-radius: 80px;
+		/*-webkit-appearance: none;*/
+	}
+	input[type=radio]{
+		/*-webkit-appearance: none;*/
+		border: 0 solid;
+		border-radius: 100px;
+		font-size: 1.1em;
+		height: 80px;
+		margin-left: 2%;
+		border:solid 1px #000;
+		transition: all 0.4s ease 0s;
+		width: 80px !important;
+		box-shadow: 0 0 2px -1px inset;
+	}
+	input[type=radio]:checked {
+		/*-webkit-appearance: none;*/
+		background-color: rgba(71, 206, 38, 0.53);	
+	}
+	input[type="datetime-local"] {
+	-webkit-appearance: none;
+		width: 100%;
+		height: 80px;
+		line-height: 80px;
+		font-size: 40px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -10%;
+	}
+
+
+
+
+input[type=range][name="iPhone"]::-webkit-slider-thumb {
+ -webkit-transition:all 0.2s ease;
+     -webkit-appearance: none;
+     -moz-appearance:none;
+    background-color:#4197FF ;
+	border-radius: 36px;
+ 	margin-top:10px;
+    width: 76px;
+    height: 76px;
+    opacity: 1;
+}
+
+#view_apio{
+	-webkit-overflow-scrolling: touch;
+	-webkit-user-drag: none;
+	display: inline-table;
+	width:100%;
+	margin-top: 110px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-y: auto;
+	
+}
+	.menu_app_aperto{
+		opacity: 1;
+background: none repeat scroll 0 0 rgb(198, 198, 198);
+		line-height: 150px;
+		text-align: center;
+		height: 150px !important;
+	}
+	.menu_app_chiuso {
+		opacity: 1;
+		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+		line-height: 150px;
+		text-align: center;
+		height: 0 !important;
+	}
+	.sotto_menu_app_aperto{
+		height: 200%;
+	}
+	#voci_di_aggiungi{
+	background: none repeat scroll 0 0 rgb(198, 198, 198);
+z-index: 5000;
+position: relative;
+		/*-webkit-transform: translateY(40%);*/
+	}
+	#top_app_oggetto{
+   -webkit-transition:all 0.5s ease-in 0s;
+   transition:all 0.5s ease-in 0s;
+   /*background: rgba(249, 249, 249, 0.98);*/
+height: 123px;
+line-height: 0px;
+font-family: sans-serif;
+font-size:17px;
+font-weight: lighter;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+width: 100%;
+z-index: 20;
+/*position: fixed;
+-webkit-transform: translateY(-160px);*/
+/*box-shadow: 0 3px 7px -5px #8e8e8e; */    
+}
+ #top_app_oggetto ul{
+	 	height: 105px;
+		width: 100%;
+		/*border-bottom: solid 1px rgba(11, 48, 92, 0.2);*/
+		padding-bottom: 8px;
+		overflow: hidden;
+		color: #3B3B3B;
+		margin: 0;
+		-webkit-padding-start: 0px;
+ }
+}
+
+
+/*PC*/	
+@media (min-width: 1001px) {
+
+
+ .dynamimultiple{
+		-webkit-appearance: none;
+		width: 100px;
+		float: right;
+		height: 50px;
+		font-size: 30px;
+		color: grey;
+		border: 1px solid #4197FF;
+		border-radius: 16px;
+		background: none repeat scroll 0 0 #FFFFFF;
+	}
+
+#centro_notifiche{
+	color: #fff;
+	margin-top: 4%;
+	background: rgba(0, 0, 0, 0.91);
+	-webkit-transition:all 0.5s ease 0s;
+	transition:all 0.5s ease 0s;
+	width:100%;
+	position: fixed;
+	display: table-caption;
+	height: 0px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 100;
+	
+}
+#centro_notifiche_preview{
+		color: #fff;
+	margin-top: 4%;
+	background: rgba(0, 0, 0, 0.91);
+	-webkit-transition:all 0.5s ease 0s;
+	transition:all 0.5s ease 0s;
+	width:100%;
+	position: fixed;
+	display: table-caption;
+	height: 0px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 100;
+
+}
+.centro_notifiche_preview_open{
+
+	height: 50px !important;
+	background: #000;
+	opacity: 1;
+}
+.notifiche_close{
+	height: 0px;
+}
+.notifiche_open{
+
+	height: 800px !important;
+	background: #000;
+	opacity: 1;
+}
+.app_home{
+		-webkit-transition:all 0.5s ease 0s;
+		transition:all 0.5s ease 0s;
+		-webkit-overflow-scrolling: touch;
+		-webkit-user-drag: none;
+		margin-left: auto;
+        margin-right: auto;
+        /*margin-top: 150px;*/
+			width:100%;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			display: block !important;
+	}
+	#controller_iphone_app{
+		width:100%;    
+		-webkit-transition:all 0.4s ease 0s;
+		transition:all 0.4s ease 0s;
+		border-right: solid 1px rgba(0, 0, 0, 0.19);   	
+	}
+	 .systembutton{
+        text-align: center;
+        padding: 0;
+        font-size: 12px;
+        float: right;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 2000px;
+        border: solid 1px rgb(88, 170, 220);
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+	.flag_on{
+		height: 70px;
+		position: absolute;
+		background-color: rgb(232, 232, 232);
+		z-index: 12;
+		opacity: 0.7;
+		width: 100%;
+		margin-left: -10.6px;
+		margin-top: -10px;
+		background-position: initial initial;
+		background-repeat: initial initial;
+	}
+	.flag_off{
+		height: 0;
+		position: absolute;
+		background-color: rgb(232, 232, 232);
+		z-index: 12;
+		opacity: 0.7;
+		width: 100%;
+		margin-left: -10.6px;
+		margin-top: -10px;
+		background-position: initial initial;
+		background-repeat: initial initial;
+
+	}
+
+
+	body{
+		/*overflow: scroll;*/
+		background-color: #E8E8E8;
+	    height: auto;
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 100%;
+	}
+	
+	#controllore{
+		transition:all 0.4s ease 0s;
+		-webkit-transition:all 0.4s ease 0s;
+		overflow: auto;
+		width: 100%;
+		margin-top: 1%;
+	}
+	
+	#cdgao {
+	    background: none repeat scroll 0 0 #F8F8F8;
+	    color: #8E8E8E;
+	    font-family: sans-serif;
+	    font-size: 71px;
+	    font-weight: lighter;
+	    height: 0;
+	    line-height: 72px;
+	    margin-top: 10px;
+	    opacity: 0;
+	    position: fixed;
+	    text-align: center;
+	    transition: all 0.4s ease 0s;
+	    width: 100%;
+	    z-index: 11;
+	}
+	
+	.cdgao_aperto{
+		height: 66px !important;
+	    opacity: 1 !important;
+	    position: fixed !important;
+	}
+	.cdgao_chiuso{
+        height: 0px !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    }
+	.open_app_dettagli{
+		/*height: 343px !important;*/
+		-webkit-transform: translateX(269%);
+		transform: translateX(269%);
+		opacity: 1 !important;
+		z-index: 20 !important;
+		display: block !important;	
+		height: 90% !important;
+		opacity: 1;
+		}
+	.voci_menu{
+		border: 1px solid #E8E8E8;
+		color: #808080;
+		font-family: sans-serif;
+		font-size: 30px;
+		font-weight: lighter;
+		height: 90px;
+		line-height: 90px;
+		width: 100%;
+    }
+
+	.iPhone_menu_class {
+	    font-size: 33px;
+	    height: 70px;
+	    line-height: 36px;
+	    margin-top: 0;
+	}
+	#app_home{
+		-webkit-transition:all 0.5s ease 0s;
+		transition:all 0.5s ease 0s;
+		
+	}
+	.app_home_open_app_dettagli{
+		width: 84% !important;
+		-webkit-transform: translateX(-10%);	
+	}
+	.app_home_close_app_dettagli{
+		
+	}
+
+	#app_dettagli{
+		-webkit-user-drag: none;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border: 0px solid;
+		width: 27%;
+		height:0px;
+		font-size: 1.1em;
+		box-shadow: -1px 0 2px -2px;
+	}
+
+	#menu_bar{
+		background: none repeat scroll 0 0 #FFFFFF;
+		border-radius: 6px;
+		box-shadow: 0 1px 5px -4px;
+		color: #1f1f1f;
+		font-family: sans-serif;
+		position: fixed;
+		text-align: center;
+		z-index: 10;
+		width:100%;
+		height: 50px;
+		line-height: 40px;
+		font-size: 20px;
+		opacity: 0.9;
+		font-weight: 100;	
+		}
+	
+	
+	.proprieta {
+		background: rgba(249, 249, 249, 0.98);
+	    border: 0 solid;
+	    border-radius: 4px;
+	    display: inline-block !important;
+	    font-size: 1.1em;
+	    height: 0;
+	    /*position: absolute;*/
+	    width: 100%;
+	    z-index: 6;
+	}
+	
+	.iPhone_nome_app {
+		color: #808080;
+	    border-bottom: 1px solid #8E8E8E;
+	    font-family: sans-serif;
+	    font-size: 20px;
+	    font-weight: lighter;
+	    background: rgba(228, 228, 228, 0.91);
+	    height: 30px;
+	   line-height: 30px;
+	   margin-top: -30px;
+	    opacity: 0;
+	    text-align: left;
+	    width: 99%;
+	    z-index: 6;
+	}
+	
+	.box_proprietaiPhone {
+		-webkit-transition: margin-left 0.6s ease 0s;
+		transition: margin-left 0.6s ease 0s;
+		border-radius: 5px; 
+		vertical-align: middle;
+		box-shadow: 0px 0px 2px -2px;
+		border: solid 1px rgba(142, 142, 142, 0.18);
+		height: auto;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		display: table-caption;
+		padding-right: 10px;
+		line-height: 100px;
+		padding-left: 10px;
+		width: 100%;
+		//margin-left: 2%;
+		display: inline-table;
+		margin-bottom: 3%;
+		font-family: helvetica;	
+	}
+	#view_app{
+		margin-top:1% !important;
+	}
+	
+	#view_apio{
+		-webkit-overflow-scrolling: touch;
+		-webkit-user-drag: none;
+		display: inline-table;
+		width:100%;
+		margin-top: 80px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	#menu_app_aggiungi img{
+		
+		width: 70px;
+		height: 70px;
+	}
+	#menu_app_programma img{
+		height: 70px;
+		width: 70px;
+	}
+	#menu_app_consumo img{
+		height: 70px;
+		width: 70px;
+	}
+	.menu_app_aperto{
+		opacity: 1;
+		background: none repeat scroll 0 0 rgb(198, 198, 198);
+		line-height: 90px;
+		text-align: center;
+		height: 90px ;
+	}
+	.menu_app_chiuso {
+		opacity: 1;
+		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+		line-height: 150px;
+		text-align: center;
+		height: 0 !important;
+	}
+	.sotto_menu_app_aperto{
+		height: 200%;
+	}
+	#voci_di_aggiungi{
+	background: none repeat scroll 0 0 rgb(198, 198, 198);
+	z-index: 5000;
+	position: relative;
+		/*-webkit-transform: translateY(40%);*/
+	}
+	#top_app_oggetto{
+	   transition:all 0.5s ease-in 0s;
+	   -webkit-transition:all 0.5s ease-in 0s;
+	   width: 100%;
+	   z-index:20;	
+	  }
+	.testo_proprietaiPhone{
+	color: #262626;
+    float: left;
+    font-family: sans-serif;
+    font-size: 25px;
+    margin-left: 10px;
+	line-height: 50px;
+	margin-right: 5px;
+	}
+	
+}
+
+
+
+
+
+/* CSS Document */
+
+
+.pc_menu_class{
+    font-size: 20px;
+    height: 50px;
+    line-height: 35px;
+    margin-top: -3px;
+    }
+
+.home{
+	
+    border-radius: 32px;
+	position: relative;
+    font-family: Helvetica;
+    font-size: large;
+    height: 145px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 145px;
+}
+
+
+.pc_nome_app{
+  	
+    font-family: sans-serif;
+    font-weight: lighter;
+    height: 30px;
+    line-height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    text-align: center;
+    width: 700px;
+    z-index: 4;
+    opacity:0;
+    margin-top: 15px;
+  	background:#e8e8e8;
+    }
+
+
+#top_app_oggetto ul{
+    transition:all 0.5s ease-in-out 0s;
+    -webkit-transition:all 0.5s ease-in-out 0s;
+}
+#top_app_oggetto ul li{
+	float:left; 
+	font-size:25px;  
+	list-style: none outside none;
+}
+
+#top_app_oggetto ul li img{
+	vertical-align: middle;
+}
+
+
+input[class="slide"]{
+	margin-top :9px;
+	}
+.pulsanteonoffeffetto2pc{
+   background: #CCC;
+   margin-left:0px;
+    opacity: 0.59;
+}
+.pulsanteonoffeffetto1pc{
+    background: none repeat scroll 0 0 #4197FF;
+    margin-left: 47px;
+    opacity: 0.59;
+}
+.pulsanteonoffeffetto2iPhone{
+   background: #CCC;
+   margin-left:-2px;
+   opacity: 0.59;
+}
+.pulsanteonoffeffetto1iPhone{
+    background: #4197FF;
+  	margin-left:80px;
+   
+}
+.pulsanteonoffeffetto2iPad{
+   background: #CCC;
+   margin-left:-4px;
+}
+.pulsanteonoffeffetto1iPad{
+    background: #4197FF;
+  	margin-left:47px;
+}
+
+
+#pulsanteonoff_iphone {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 0 2px -1px;
+    float: right;
+    height: 44px;
+    margin-top: 7px;
+    width: 100px;
+    }
+
+
+ .box_proprietaiPad {
+ 	box-shadow: 0 5px 4px -7px;
+    margin-bottom: 23px;
+    margin-top: 25px;
+    min-height: 36px;
+ }
+
+    
+.content_pulsanteiPad{
+   float: right; 
+    background: none repeat scroll 0% 0% white; 
+    height: 35px; 
+    width: 81px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px -1px;
+    margin-top: 0px;
+    }
+  .testo_proprietapc{
+   	color: #808080;
+	float: left;
+    font-family: sans-serif;
+    font-size: xx-large;
+    margin-left: 10px;
+    font-weight: 100;
+    }
+.content_pulsantepc{
+    float: right; 
+    background: none repeat scroll 0% 0% white; 
+    height: 35px; 
+    width: 81px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px -1px;
+    margin-top: 0px;
+    }
+.box_proprietapc{
+    box-shadow: 0 5px 4px -7px;
+    padding-top: 15px;
+    min-height: 36px;
+    height:71px;
+    }
+.pale_icona_ventilatore{
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-radius: 110px;
+	border-bottom-left-radius: 50px;
+	border-top-left-radius: 190px;
+	height: 63px;
+	box-shadow: 0 0 12px -8px;
+	border-top:solid 1px #78D7DF;
+	border-left: solid 1px #000;
+	border-bottom: solid 1px #000;
+	margin-right: auto;
+	position: absolute;
+	width: 80px;
+	z-index: 2;
+}
+.webkit_touch_scroll {
+	-webkit-overflow-scrolling: touch;
+}
+
+.no_box_proprieta_iPhone{
+    -webkit-transition: none;
+    transition: none;
+    border-radius: 0; 
+    vertical-align: top;
+    box-shadow: 0 0 0 0;
+    border: 0;
+    height: auto;
+    padding-bottom: 0;
+    padding-top: 0;
+    display: block;
+    padding-right: 0;
+    line-height: 0;
+    padding-left: 0;
+    width: auto;
+    margin-bottom: 0;
+}
+@-webkit-keyframes load_app {
+	0%   {
+			border-radius: 32px;
+			opacity: 1;	
+		}
+	
+	50%   {
+			opacity: 0.2;
+			border-radius: 300px;
+			}
+	
+	100%   {
+			opacity: 1;
+			border-radius: 1000px;
+			}
+}
+.carico_app {
+	-webkit-animation: load_app 1.8s;
+	-webkit-animation-iteration-count: infinite;
+}
+.controllore{
+	overflow-y: scroll; 
+	overflow-x: hidden; 
+}

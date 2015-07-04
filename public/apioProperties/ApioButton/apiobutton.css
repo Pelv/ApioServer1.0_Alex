@@ -1,0 +1,49 @@
+/*Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino*/
+
+/********************************* LICENSE *******************************
+*									 *
+* This file is part of ApioOS.						 *
+*									 *
+* ApioOS is free software released under the GPLv2 license: you can	 *
+* redistribute it and/or modify it under the terms of the GNU General	 *
+* Public License version 2 as published by the Free Software Foundation. *
+*									 *
+* ApioOS is distributed in the hope that it will be useful, but		 *
+* WITHOUT ANY WARRANTY; without even the implied warranty of		 *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 *
+* GNU General Public License version 2 for more details.		 *
+*									 *
+* To read the license either open the file COPYING.txt or		 *
+* visit <http://www.gnu.org/licenses/gpl2.txt>				 *
+*									 *
+*************************************************************************/
+
+
+@media (min-width: 481px) and (max-width: 1000px) {
+    .button_ {
+        width: 105px;
+        height: 105px;
+        line-height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 0;
+        border-radius: 2000px;
+        border: solid 1px rgb(88, 170, 220);
+        font-size: 35px;
+    }
+}
+@media (min-width: 1001px) {
+    .button_ {
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        width: 66px;
+        height: 66px;
+        line-height: 66px;
+        border-radius: 2000px;
+        border: solid 1px rgb(88, 170, 220);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

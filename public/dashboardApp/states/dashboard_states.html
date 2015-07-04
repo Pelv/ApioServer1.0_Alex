@@ -1,0 +1,103 @@
+<!--<div id="States" class="dashboardPage container-fluid">-->
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+<div id="States" class="container-fluid">
+    <ul role="tablist" class="nav nav-tabs">
+        <li class="active"><a href="#StatesTab" role="tab" data-toggle="tab">States</a>
+        </li>
+        <li><a href="#NewStateTab" role="tab" data-toggle="tab">New state</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="NewStateTab" class="tab-pane">
+            <div class="container-fluid">
+                <h3>New state</h3>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>Preview</h4>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered">
+                                    <tr ng-repeat="(key,value) in state">
+                                        <td>{{key}}</td>
+                                        <td>{{value}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div style="" class="form">
+                            <div class="form-group">
+                                <label>State name</label>
+                                <input type="text" ng-model="newState.name" class="form-control input-lg" />
+                            </div>
+                            <div class="form-group">
+                                <label>Object </label>
+                                <select ng-model="newStateProperty.objectId" class="form-control input-lg">
+                                    <option ng-repeat="obj in objects track by $index" value="{{obj.objectId}}">{{obj.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <input type="text" ng-model="newStateProperty.key" class="form-control input-lg" />
+                                </div>
+                                <div class="col-xs-4">
+                                    <input type="text" ng-model="newStateProperty.value" class="form-control input-lg" />
+                                </div>
+                                <div class="col-xs-4"></div>
+                            </div>
+                            <div class="form-group">
+                                <button ng-click="saveState()" class="btn btn-primary">Save </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="StatesTab" class="tab-pane active">
+            <h3>States</h3>
+            <table style="margin-top:20px;" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Properties</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="state in states">
+                        <td>{{state.name}}</td>
+                        <td><span ng-repeat="(k,v) in state.properties">{{k}} </span>
+                        </td>
+                        <td>
+                            <button ng-click="deleteState(state)" class="btn btn-danger btn-sm"><i>X</i> Delete </button>
+                            <button ng-click="applyState(state)" style="margin-left:5px;" class="btn btn-success btn-sm"><i class="fa fa-play"></i> Apply</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

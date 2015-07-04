@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome to Apio!</title>
+        <link rel="shortcut icon" type="image/x-icon" href="public/apio_assets/img/favicon.ico"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, email-scalable=no, initial-scale=0.45, minimum-scale=0, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+        <title>APIO</title>
+
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <style>
+        body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #fff;
+        }
+        .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+        }
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+        margin-bottom: 10px;
+        }
+        .form-signin .checkbox {
+        font-weight: normal;
+        }
+        .form-signin .form-control {
+        position: relative;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+        z-index: 2;
+        }
+        .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        }
+        </style>
+
+    </head>
+    <body>
+        <div class="container" ng-app="ApioLoginApplication" ng-controller="LoginController">
+            <form class="form-signin" role="form" ng-hide="showSignupForm || showBoardSelection">
+                <img src="images/Apio_Logo.png" style="display:block;width:300px;margin:0px auto;"/>
+                <h2 class="form-signin-heading">Please sign in</h2>
+                <div class="alert alert-danger" ng-show="$invalid" ng-cloak>Invalid email or password</div>
+                <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus ng-model="email" ng-change="clearError()">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="password" ng-change="clearError()">
+                </div>
+
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-danger btn-block" type="button" ng-click="login()">Sign in</button>
+                <div class="form-group">
+                    <a href="#" class="link" ng-click="switchToSignup()">Need an account ?</a>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <form class="form" role="form" ng-show="showSignupForm">
+                        <img src="images/Apio_Logo.png" style="display:block;width:300px;margin:0px auto;"/>
+                        <h2 class="form-signin-heading">Create account</h2>
+                        <div class="alert alert-danger" ng-show="$signupError == true" ng-cloak>Invalid email or password</div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="">Email address</label>
+                            <input type="text" id="signupEmail" class="form-control" placeholder="Email address" required autofocus ng-model="signupEmail" ng-change="clearError()">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword" class="">Password</label>
+                            <input type="password" id="signupPassword" class="form-control" placeholder="Password" required ng-model="signupPassword" ng-change="clearError()">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword" class="">Confirm Password</label>
+                            <input type="password" id="signupPasswordConfirm" class="form-control" placeholder="Confirm Password" required ng-model="signupPasswordConfirm" ng-change="clearError()">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-lg btn-block" ng-click="signup()">Sign up</button>
+                        </div>
+
+                        <div class="form-group">
+                            <a href="#" class="link" ng-click="showSignupForm = false;">Already have an account? Login!</a>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        </div> <!-- /container -->
+    </body>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="javascripts/login.js">
+
+    </script>
+</html>

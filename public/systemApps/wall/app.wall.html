@@ -1,0 +1,74 @@
+<div>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+    <link rel="stylesheet" href="stylesheets/BachecaApp.css" />
+    <style>
+        .active_on{
+            background-color: rgb(34, 201, 34);
+        }
+        @media (min-width: 320px) and (max-width: 600px){
+            .active_bacheca{
+                width: 65px;
+                height: 65px !important;
+                border-radius: 100px;
+                border: solid 5px rgb(255, 255, 255);
+                box-shadow:0 0 1px 1px rgba(3, 3, 3, 0.57);
+                margin-top: 9px;
+                margin-right: 5%;
+            }
+        }
+        @media (min-width: 601px) and (max-width: 1000px){
+            .active_bacheca{
+                width: 65px;
+                height: 65px !important;
+                border-radius: 100px;
+                border: solid 5px rgb(255, 255, 255);
+                box-shadow:0 0 1px 1px rgba(3, 3, 3, 0.57);
+                margin-top: 9px;
+                margin-right: 5%;
+            }
+        }
+        @media (min-width: 1001px){
+            .active_bacheca{
+                width: 25px;
+                height: 25px !important;
+                border-radius: 100px;
+                border: solid 5px rgb(255, 255, 255);
+                box-shadow: 0 0 1px 1px rgba(3, 3, 3, 0.57);
+                margin-right: 5%;
+            }
+        }
+    </style>
+    
+    <div id="wallContainer" class="app_home openAppIconStyle">
+        <div class="elementBacheca box_proprietaiPhone" ng-repeat="state in states">
+            <li id="state-{{$index}}" class="active_bacheca" ng-class="{'active_on' : state.active}" ng-click="launchState(state, $index)"></li>
+            <li class="statusName">{{state.name}}<div class="name_object">{{state.objectName}}</div></li>
+            <li ng-click="editState(state)">&gt;</li>
+            <div class="option_Bacheca_id_state">
+                <li class="delete" ng-click="deleteState(state)">elimina</li>
+                <li class="tag" ng-click="tagState(state)">tag</li>
+            </div>
+        </div>
+    </div>
+    <div id="ApioApplicationContainerOld" hm-swipe="" hm-drag="addDragging()" ></div>
+</div>

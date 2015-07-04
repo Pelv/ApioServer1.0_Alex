@@ -1,0 +1,172 @@
+<section id="newApp" class="tab-pane">
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+    <h3>Import</h3>
+    <div class="">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>From Github</h3>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="officialRepo" class="col-sm-5 control-label">Official Apio App</label>
+                    <div class="input-group col-sm-10" style="margin-left:15px">
+                      <select ng-model="gitPathOfficial" class="form-control"  id="officialRepo">
+                        <option value="https://github.com/ApioLab/ServoMotor">ServoMotor</option>
+                        <option value="https://github.com/ApioLab/Stereo">Stereo</option>
+                        <option value="https://github.com/ApioLab/irrigationSystem">IrrigationSystem</option>
+                        <option value="https://github.com/ApioLab/LedStrip">LedStrip</option>                        
+                        <option value="https://github.com/ApioLab/MoistureSensor">MoistureSensor</option>
+                        <option value="https://github.com/ApioLab/DoorLock">Jemma's DoorLock</option>
+                        <option value="https://github.com/ApioLab/ColorLight">Jemma's ColorLight</option>
+                        <option value="https://github.com/ApioLab/WashingMachine">Jemma's WashingMachine</option>
+                      </select>
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="gitImport(gitPathOfficial)">Import</button>
+                      </span>
+                    </div><!-- /input-group -->
+                </div>
+                <div class="row">
+                    <label for="officialRepoPath" class="col-sm-5 control-label">Any Compatible Repo</label>
+                    <div class="input-group col-sm-10" style="margin-left:15px">
+                      <input ng-model="gitPath" type="text" class="form-control" placeholder="Path to Github repo" id="officialRepoPath">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="gitImport(gitPath)">Import</button>
+                      </span>
+                    </div><!-- /input-group -->
+                </div>
+            </div><!-- /.col-lg-6 -->
+
+            <div id="modalGitClone" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    
+                    <h4 class="modal-title">Cloning Application</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Cloning the Apio Application from the repo {{gitPath}}. Please wait.</p>
+                  </div>
+                  <div class="modal-footer">
+                   <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    -->
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <h3>or select a local file</h3>
+
+                <!--<div ng-show="uploader.isHTML5">-->
+                    <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                    <!--<div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                        Base drop zone
+                    </div>-->
+
+                    <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                    <!--<div nv-file-drop="" uploader="uploader" options="{ url: '/apio/app/upload' }">
+                        <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                            Another drop zone with its own settings
+                        </div>
+                    </div>
+                </div>-->
+
+                <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+             <!--   Multiple
+                <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>-->
+
+                Single
+                <input type="file" nv-file-select="" uploader="uploader" accept=".tar.gz" ng-click="uploader.clearQueue()" />
+            </div>
+
+            <div class="col-md-9" style="margin-bottom: 40px">
+
+                <h3>Upload queue</h3>
+                <p>Queue length: {{ uploader.queue.length }}</p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th width="50%">Name</th>
+                            <th ng-show="uploader.isHTML5">Size</th>
+                            <th ng-show="uploader.isHTML5">Progress</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td><strong>{{ item.file.name }}</strong></td>
+                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                            <td ng-show="uploader.isHTML5">
+                                <div class="progress" style="margin-bottom: 0;">
+                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                            </td>
+                            <td nowrap>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                    <span class="glyphicon glyphicon-upload"></span> Upload
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                    <span class="glyphicon glyphicon-trash"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <div>
+                        Queue progress:
+                        <div class="progress" style="">
+                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                        <span class="glyphicon glyphicon-upload"></span> Upload all
+                    </button>
+                    <button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                    </button>
+                    <button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                        <span class="glyphicon glyphicon-trash"></span> Remove all
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+	</div>
+</section>

@@ -1,0 +1,103 @@
+<div>
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+    <!-- Single application view -->
+    <div class="" >
+        <div id="ApioIconsContainer">
+        
+            <div class="icon_app" ng-repeat="obj in objects" ng-click="goToApplication(obj.objectId)">
+                <div class="home" >
+                    <div class="home">
+                        <div style="
+                            border: 1px solid #CCC;
+                            border-radius: 32px;
+                            height: 145px;
+                            width: 145px;
+                            background-size:100%;
+                            background-position:50%;
+                            background-image: url(applications/{{obj.objectId}}/icon.png);
+                        "></div>
+                    </div>
+                </div>
+                <div style=" margin-top: 8px; width: 100%; height:40px; ">
+                    <div class="homeAppIconName" style="">{{obj.name}}</div>
+                    <a name="4321"></a>             <div style="font-family: Trebuchet MS; font-size: x-small; text-align:center; float:right; margin-left:3px; margin-right:3px;"></div>
+                    <div id="4321freccia" style=" background: none repeat scroll 0 0;
+                        border-radius: 100px;
+                        height: 40px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 5px;
+                        text-align: center;
+                    width: 40px;"></div>
+                </div>
+                <span class="icona"></span>
+            </div>
+            <div class="icon_app" ng-click="shutdown()">
+                <div class="home" >
+                    <div style="
+                        border: 1px solid #CCC;
+                        border-radius: 32px;
+                        height: 145px;
+                        width: 145px;
+                        background-size: 100%;
+                        background-position: 50%;
+                        background-image: url(images/shutdown.png);
+                    "></div>
+                </div>
+                <div style="margin-top: 8px; width: 100%; height:40px;">
+                    <div class="homeAppIconName" style="">Spegni</div>
+                </div>
+            </div>
+            <div class="icon_app" ng-click="launchDashboard()">
+                <div class="home" >
+                    <div class="home">
+                        <div style="
+                            border: 1px solid #CCC;
+                            border-radius: 32px;
+                            height: 145px;
+                            width: 145px;
+                            background-size:100%;
+                            background-position:50%;
+                            background-image: url(applications/add/icon.png);
+                        "></div>
+                    </div>
+                </div>
+                <div style=" margin-top: 8px; width: 100%; height:40px; ">
+                    <div class="homeAppIconName" style="">Apio SDK</div>
+                    <a name="4321"></a>             <div style="font-family: Trebuchet MS; font-size: x-small; text-align:center; float:right; margin-left:3px; margin-right:3px;"></div>
+                    <div id="4321freccia" style=" background: none repeat scroll 0 0;
+                        border-radius: 100px;
+                        height: 40px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 5px;
+                        text-align: center;
+                    width: 40px;"></div>
+                </div>
+                <span class="icona"></span>
+            </div>
+        </div>
+
+        <div id="ApioApplicationContainerOld" hm-swipe="" hm-drag="addDragging()" ></div>
+    </div>
+</div>

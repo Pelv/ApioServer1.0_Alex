@@ -1,0 +1,89 @@
+        <!--<blockquote>{{newObject}}</blockquote>-->
+<!--Copyright 2014-2015 Alex Benfaremo, Alessandro Chelli, Lorenzo Di Berardino, Matteo Di Sabatino-->
+
+<!---------------------------------- LICENSE -------------------------------
+-									 -
+- This file is part of ApioOS.						 -
+-									 -
+- ApioOS is free software released under the GPLv2 license: you can	 -
+- redistribute it and/or modify it under the terms of the GNU General	 -
+- Public License version 2 as published by the Free Software Foundation. -
+-									 -
+- ApioOS is distributed in the hope that it will be useful, but		 -
+- WITHOUT ANY WARRANTY; without even the implied warranty of		 -
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the		 -
+- GNU General Public License version 2 for more details.		 -
+-									 -
+- To read the license either open the file COPYING.txt or		 -
+- visit <http://www.gnu.org/licenses/gpl2.txt>				 -
+-									 -
+-------------------------------------------------------------------------->
+
+
+        <dl class="dl-horizontal">
+            <dt>Description</dt>
+            <dd>Here it is a <b>summary</b> of your Smart Object! If there is something wrong, use the arrow to go back in the wizard and fix them. Otherwise, click on done and make the template code you need!</dd>
+        </dl>
+        <h4>Object <b>{{newObject.objectName}}</b> summary</h4>
+        <table style="width:100%" class="table table-bordered">
+          <tr>
+            <td>Name</td>
+            <td>{{newObject.objectName}}</td> 
+            <td></td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>{{newObject.objectId}}</td> 
+            <td></td>
+          </tr>
+          <tr>
+            <td>Protocol</td>
+            <td ng-if="newObject.protocol==='z'">XBee</td>
+            <td ng-if="newObject.protocol==='w'">Wireless</td>
+            <td ng-if="newObject.protocol==='l'">LightWeight Mesh</td>
+            <td ng-if="newObject.protocol==='b'">Bluetooth</td>
+            <td ng-if="newObject.protocol!=='z'&&newObject.protocol!=='w'&&newObject.protocol!=='l'&&newObject.protocol!=='b'">{{newObject.protocol}}</td> 
+            <td></td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>{{newObject.address}}</td> 
+            <td></td>
+          </tr>
+          <tr ng-if="key==='properties'" ng-repeat="(key,value) in newObject">
+            <td>{{key}}</td>
+            <td>
+                <table style="width:100%" class="table table-bordered">
+                    <tr ng-repeat="property in value">
+                        <td ng-if="property.type!=='List'" ng-repeat="(keyProperty,valueProperty) in property">{{keyProperty}} : {{valueProperty}}</td>
+                        <td ng-if="property.type==='List' && keyProperty!=='items'" ng-repeat="(keyProperty,valueProperty) in property">{{keyProperty}} : {{valueProperty}}</td>
+                        <td ng-if="property.type==='List' && keyProperty==='items'" ng-repeat="(keyProperty,valueProperty) in property">
+                            <table  style="width:100%" class="table table-bordered"> 
+                                <tr ng-repeat="(keyItem, valueItem) in valueProperty">
+                                    <td >{{keyItem}} : {{valueItem}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+         </tr>
+         <tr ng-if="key==='pins'" ng-repeat="(key,value) in newObject">
+            <td>{{key}}</td>
+            <td>
+                <table style="width:100%" class="table table-bordered">
+                    <tr ng-repeat="pin in value">
+                        <td ng-repeat="(keyPin,valuePin) in pin">{{keyPin}} : {{valuePin}}</td>
+                    </tr>
+                </table>
+            </td>
+         </tr>
+
+        </table>   
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-click="panel.previousForm(formProtocolInfo.$valid)">Previous</button>
+            <button type="submit" class="btn btn-success" ng-disabled="formProtocolInfo.$invalid" ng-click="panel.doneForm(formProtocolInfo.$valid)">Done</button>
+        </div>   
+    </div>
