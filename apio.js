@@ -367,8 +367,8 @@
             console.log("ERROR WHILE APPENDING ON FILE LOG.TXT");
           }
         });
-        
-        
+
+
         checkDongle = setInterval(function() {
           console.log("+++++++Check a Dongle+++++++");
           var d = new Date(),
@@ -409,7 +409,7 @@
       }
 
       console.log("+++++++Sto per labciare checkGenericDongle+++++++");
-      
+
 	  checkGenericDongle();
 	  //Ciclo che gestisce la coda
       Apio.Serial.counter = 0;
@@ -440,7 +440,7 @@
             ports.forEach(function(port) {
 
 
-              if (String(port.manufacturer) === Apio.Configuration.serial.manufacturer) {
+              if (String(port.manufacturer) === "Apio Dongle" || String(port.manufacturer) === "Apio_Dongle" ) {
                 //console.log(port.comName);
                 //console.log(Apio.Configuration.serial.port)
                 Apio.Configuration.serial.port= port.comName;
@@ -879,10 +879,10 @@
         }
       }, 10000);
 
-	        
-  
 
-      
+
+
+
       Apio.Serial.stream = function(data, callback) {
 
         function doTheStreaming(protocol, address, key, value, callback) {
@@ -2212,8 +2212,8 @@
                                 }
                             })
                          }*/
-                        
-                           
+
+
 
 
               Apio.Database.updateProperty(state, function() {
@@ -2297,9 +2297,9 @@
       Apio.System = {
           ApioIdentifier: null
       };
-      
-      
-      
+
+
+
       Apio.System.launchEvent = function(eventName, callback) {
         Apio.Database.db.collection('Events')
             .find({
@@ -2672,7 +2672,7 @@
               Apio.Database.updateProperty(state, function() {
                   Apio.Serial.send(state, function() {
 	                  Apio.io.emit("apio_server_update", state);
-	                  
+
 	                  //Apio.io.emit("apio_state_update", state);
 
 

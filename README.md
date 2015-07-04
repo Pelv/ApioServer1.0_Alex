@@ -19,6 +19,9 @@ To install and run the Apio Server application you will need:
 * NPM
 * MongoDB
 
+You need to update the Apio Dongle with this firmware:
+https://github.com/ApioLab/Objects/tree/master/Coordinatore/Coor7_4
+
 ===========
 ### Install
 
